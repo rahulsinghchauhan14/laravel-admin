@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class LoginController extends Controller
 {
@@ -14,6 +16,16 @@ class LoginController extends Controller
      */
     public function index()
     {
+        return view('Admin.Login.login');
+    }
+
+    /**
+     * Show the form for authenticate a new user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function doLogin()
+    {
         //
     }
 
@@ -22,9 +34,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function showRegister()
     {
-        //
+        return view('Admin.SignUp.index');
     }
 
     /**
@@ -33,7 +45,7 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeRegister(Request $request)
     {
         //
     }
@@ -48,29 +60,7 @@ class LoginController extends Controller
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+ 
 
     /**
      * Remove the specified resource from storage.

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+// Admin Routes
+
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [LoginController::class, 'index']);
+    Route::post('/login', [LoginController::class, 'doLogin']);
+    Route::post('/logout',[LoginController::class, 'destroy']);
+    Route::get('/register', [LoginController::class, 'showRegister']);
+    Route::get('/signup', [LoginController::class, 'storeRegister']);
 });
